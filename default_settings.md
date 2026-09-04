@@ -1,8 +1,6 @@
 # Default Settings
 
-This document defines the task-level inputs and reusable default settings for the Deep Research Agent for Shell Company Screening.
-
-These settings describe the client mandate and transaction requirements for a specific research run.
+This document defines the default settings for a shell company screening task, which can be customized for each client mandate.
 
 ## Settings
 
