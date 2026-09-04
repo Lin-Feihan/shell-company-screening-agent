@@ -6,13 +6,13 @@ These settings describe the client mandate and transaction requirements for a sp
 
 ## Settings
 
-| Field ID | Setting | Type | Required | Default | Description |
+| Field ID | Setting | Type | Required Input | Default | Description |
 |---|---|---|---|---|---|
 | `client_name` | Client Name | Text | Yes | — | Name of the client or organization commissioning the shell company screening task. |
 | `target_market` | Target Listed Market | Text | Yes | — | Listed market or jurisdiction in which shell company candidates should be identified. |
 | `research_cutoff_date` | Research Cut-off Date | Date | No | Run date | Latest date up to which information should be considered. An explicit date should be provided when reproducibility is required. |
-| `transaction_scope` | Transaction Scope | Text | No | Traditional listed shell / listed-platform acquisition | Defines the intended transaction structure and the type of listed platform being sought. |
-| `spac_de_spac_included` | SPAC / De-SPAC Included | Boolean | No | False | Determines whether SPAC-related shells or De-SPAC transactions are included in the research scope. |
+| `spac_included` | SPAC Included | Boolean | No | False | Determines whether SPACs are included as potential listed-platform candidates. |
+| `de_spac_included` | De-SPAC Included | Boolean | No | False | Determines whether De-SPAC transactions are included as an eligible transaction structure. |
 | `control_requirement` | Control Requirement | Long text | No | Relatively high level of effective control preferred | Describes the client's desired level of ownership or effective control and any relevant flexibility in the control path. |
 | `capital_structure_preference` | Capital Structure Preference | Long text | No | Relatively clean capital structure preferred | Describes preferences regarding convertible bonds, legacy financing instruments, or other capital-structure complexity. |
 | `warrant_dilution_preference` | Warrant and Dilution Preference | Long text | No | Clear and manageable dilution structure preferred | Describes acceptable warrant, option, convertible-security, or other potential dilution structures. |
