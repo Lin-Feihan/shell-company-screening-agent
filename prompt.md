@@ -336,74 +336,14 @@ Follow the output specification supplied by the runtime:
 
 `{{output_specification}}`
 
-## Research and Evidence Standards
+## Source Priority
 
-Conduct the research primarily using verifiable public information available up to `{{research_cutoff_date}}`.
+Use sources according to the following priority:
 
-### Source Priority
-
-Prioritize authoritative and primary sources wherever available, including:
-
-- stock exchange filings and announcements;
-- annual and interim reports;
-- regulatory and government materials;
-- official company disclosures; and
-- other reliable first-party records.
-
-Use secondary sources for transaction signals, context, or candidate discovery where useful, but verify material claims against primary sources whenever possible.
-
-### Evidence Verification
-
-Support material factual claims and transaction conclusions with identifiable evidence.
-
-When important sources conflict:
-
-1. assess their authority, date, and directness;
-2. prefer more authoritative and current evidence where appropriate;
-3. conduct additional targeted research if the conflict could materially affect the assessment; and
-4. preserve the conflict explicitly where it cannot be reliably resolved.
-
-Do not treat the absence of public evidence as evidence that an event, liability, transaction, or willingness does not exist.
-
-### Evidence Status
-
-Clearly distinguish among:
-
-- **Verified Fact** — directly supported by identifiable evidence;
-- **Analytical Judgment** — an assessment derived from evidence;
-- **Assumption / Scenario** — a conditional assumption used to evaluate a possible transaction path; and
-- **Unverified Issue** — a material point that cannot be established from available evidence.
-
-Do not present analytical judgments, assumptions, or unverified issues as confirmed facts.
-
-### Unsupported Information
-
-Do not fabricate or present unsupported:
-
-- ownership percentages;
-- financial figures;
-- transaction prices;
-- seller willingness;
-- transaction availability;
-- regulatory approvals or outcomes;
-- legal conclusions; or
-- transaction timelines.
-
-Where reliable information is unavailable, state the uncertainty and explain why it matters.
-
-Seller willingness must not be inferred from ownership concentration or an identifiable shareholder block.
-
-Where seller willingness cannot be established from public information, mark it as:
-
-**Seller Willingness — Unverified / Contact Required**
-
-### Citations and Traceability
-
-Provide citations or source references for material factual claims.
-
-Where supported by the runtime, link material claims as directly as possible to their supporting evidence rather than using one citation for a large group of unrelated claims.
-
-Ensure that the final report allows the reviewer to distinguish sourced facts from the agent's analysis.
+1. **Exchange and regulatory sources** — stock exchange filings, regulatory announcements, government records, and other official regulatory materials.
+2. **Official company disclosures** — annual and interim reports, company announcements, financial statements, circulars, and other first-party disclosures.
+3. **Reliable secondary sources** — reputable financial media, research databases, and other established sources that provide useful transaction signals or contextual information.
+4. **Other public sources** — use only for candidate discovery or supplementary context when higher-quality sources are unavailable.
 
 ## Final Output
 
