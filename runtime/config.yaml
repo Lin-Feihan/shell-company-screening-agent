@@ -1,1 +1,29 @@
+# Runtime configuration for Deep Research Agent
+# for Shell Company Screening
 
+agent:
+  name: "Deep Research Agent for Shell Company Screening"
+
+  files:
+    prompt: "../prompt.md"
+    settings: "../default_settings.md"
+    output_spec: "../output_spec.md"
+
+
+research:
+  cutoff_date: null
+
+
+runtime:
+  mode: "prototype"
+
+  # Placeholder for Deep Research API configuration.
+  # To be replaced after confirming the target runtime/API.
+  provider: "deep_research_api"
+
+  model: null
+
+
+output:
+  format: "markdown"
+  save_report: true
