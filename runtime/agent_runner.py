@@ -16,9 +16,11 @@ def run_deep_research(prompt):
 
 
 def run_agent(settings):
-    """
-    Main execution pipeline.
-    """
+    with open("../output_spec.md", "r", encoding="utf-8") as f:
+        output_specification = f.read()
+
+    settings = settings.copy()
+    settings["output_specification"] = output_specification
 
     prompt = build_prompt(
         "../prompt.md",
