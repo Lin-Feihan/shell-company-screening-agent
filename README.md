@@ -1,6 +1,6 @@
 # Shell Company Screening Agent
 
-A Deep Research Agent for identifying and evaluating listed shell company candidates as potential acquisition targets.
+A Deep Research Agent for identifying and evaluating listed shell companies as potential acquisition targets in M&A transactions.
 
 ## Overview
 
