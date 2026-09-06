@@ -23,16 +23,16 @@ def inject_settings(prompt, settings):
 
 
 def build_prompt(prompt_path, settings):
-    """
-    Build the final prompt sent to
-    Deep Research runtime.
-    """
-
     core_prompt = load_file(prompt_path)
 
     final_prompt = inject_settings(
         core_prompt,
         settings
     )
+
+    if "{{" in final_prompt or "}}" in final_prompt:
+        raise ValueError(
+            "Unresolved template variables remain in the prompt."
+        )
 
     return final_prompt
