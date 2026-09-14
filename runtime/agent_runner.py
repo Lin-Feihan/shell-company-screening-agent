@@ -1,34 +1,51 @@
+from pathlib import Path
+
 from prompt_builder import build_prompt
 
 
-def run_deep_research(prompt):
-    """
-    Placeholder function.
+REPO_ROOT = (
+    Path(__file__)
+    .resolve()
+    .parents[1]
+)
 
-    Replace this function with the actual
-    Deep Research API call after runtime
-    integration is confirmed.
+
+def run_agent(settings, provider):
+    """
+    Build the final Shell Company Screening
+    prompt and execute it through the selected
+    Deep Research provider.
     """
 
-    raise NotImplementedError(
-        "Deep Research API integration required."
+    output_spec_path = (
+        REPO_ROOT
+        / "output_spec.md"
     )
 
+    prompt_path = (
+        REPO_ROOT
+        / "prompt.md"
+    )
 
-def run_agent(settings):
-    with open("../output_spec.md", "r", encoding="utf-8") as f:
-        output_specification = f.read()
+    output_specification = (
+        output_spec_path.read_text(
+            encoding="utf-8"
+        )
+    )
 
-    settings = settings.copy()
-    settings["output_specification"] = output_specification
+    runtime_settings = settings.copy()
+
+    runtime_settings[
+        "output_specification"
+    ] = output_specification
 
     prompt = build_prompt(
-        "../prompt.md",
-        settings
+        prompt_path,
+        runtime_settings
     )
 
-    result = run_deep_research(
+    report = provider.run(
         prompt
     )
 
-    return result
+    return report
