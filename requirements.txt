@@ -1,0 +1,4 @@
+openai
+google-genai
+perplexityai
+PyYAML
