@@ -25,12 +25,19 @@ class PerplexityDeepResearchProvider(
                 input=prompt,
             )
 
-            report = response.output_text
+            report = getattr(
+    response,
+    "output_text",
+    None
+)
 
-            if not report:
-                raise RuntimeError(
-                    "Perplexity returned an empty report."
-                )
+if not report:
+    report = str(response)
+
+if not report:
+    raise RuntimeError(
+        "Perplexity returned an empty report."
+    )
 
             return report
 
