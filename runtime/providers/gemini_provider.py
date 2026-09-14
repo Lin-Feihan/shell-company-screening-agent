@@ -38,19 +38,26 @@ class GeminiDeepResearchProvider(DeepResearchProvider):
 
                 if interaction.status == "completed":
 
-                    report = (
-                        interaction
-                        .steps[-1]
-                        .content[0]
-                        .text
-                    )
+    report = getattr(
+        interaction,
+        "output_text",
+        None
+    )
 
-                    if not report:
-                        raise RuntimeError(
-                            "Gemini returned an empty report."
-                        )
+    if not report:
+        report = (
+            interaction
+            .steps[-1]
+            .content[0]
+            .text
+        )
 
-                    return report
+    if not report:
+        raise RuntimeError(
+            "Gemini returned an empty report."
+        )
+
+    return report
 
                 if interaction.status == "failed":
                     raise RuntimeError(
