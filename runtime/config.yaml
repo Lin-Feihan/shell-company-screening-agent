@@ -1,29 +1,25 @@
-# Runtime configuration for Deep Research Agent
-# for Shell Company Screening
+# Runtime configuration for the Shell Company Screening Agent
 
 agent:
-  name: "Deep Research Agent for Shell Company Screening"
+  name: "Shell Company Screening Agent"
 
-  files:
-    prompt: "../prompt.md"
-    settings: "../default_settings.md"
-    output_spec: "../output_spec.md"
+providers:
 
+  openai:
+    enabled: true
+    model: "o3-deep-research"
+    poll_interval_seconds: 10
 
-research:
-  cutoff_date: null
+  gemini:
+    enabled: true
+    agent: "deep-research-preview-04-2026"
+    poll_interval_seconds: 10
 
-
-runtime:
-  mode: "prototype"
-
-  # Placeholder for Deep Research API configuration.
-  # To be replaced after confirming the target runtime/API.
-  provider: "deep_research_api"
-
-  model: null
-
+  perplexity:
+    enabled: true
+    preset: "deep-research"
 
 output:
   format: "markdown"
+  directory: "output"
   save_report: true
