@@ -10,6 +10,7 @@ class GeminiDeepResearchProvider(DeepResearchProvider):
     provider_name = "gemini"
 
     def run(self, prompt):
+
         agent = self.config.get(
             "agent",
             "deep-research-preview-04-2026"
@@ -32,32 +33,33 @@ class GeminiDeepResearchProvider(DeepResearchProvider):
             )
 
             while True:
+
                 interaction = client.interactions.get(
                     interaction.id
                 )
 
                 if interaction.status == "completed":
 
-    report = getattr(
-        interaction,
-        "output_text",
-        None
-    )
+                    report = getattr(
+                        interaction,
+                        "output_text",
+                        None
+                    )
 
-    if not report:
-        report = (
-            interaction
-            .steps[-1]
-            .content[0]
-            .text
-        )
+                    if not report:
+                        report = (
+                            interaction
+                            .steps[-1]
+                            .content[0]
+                            .text
+                        )
 
-    if not report:
-        raise RuntimeError(
-            "Gemini returned an empty report."
-        )
+                    if not report:
+                        raise RuntimeError(
+                            "Gemini returned an empty report."
+                        )
 
-    return report
+                    return report
 
                 if interaction.status == "failed":
                     raise RuntimeError(
@@ -65,7 +67,9 @@ class GeminiDeepResearchProvider(DeepResearchProvider):
                         f"{interaction.error}"
                     )
 
-                time.sleep(poll_interval)
+                time.sleep(
+                    poll_interval
+                )
 
         except Exception as exc:
             raise RuntimeError(

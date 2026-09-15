@@ -1,9 +1,15 @@
 from .openai_provider import (
     OpenAIDeepResearchProvider
 )
+
+from .openrouter_provider import (
+    OpenRouterDeepResearchProvider
+)
+
 from .gemini_provider import (
     GeminiDeepResearchProvider
 )
+
 from .perplexity_provider import (
     PerplexityDeepResearchProvider
 )
@@ -11,6 +17,7 @@ from .perplexity_provider import (
 
 PROVIDER_MAP = {
     "openai": OpenAIDeepResearchProvider,
+    "openrouter": OpenRouterDeepResearchProvider,
     "gemini": GeminiDeepResearchProvider,
     "perplexity": PerplexityDeepResearchProvider,
 }
@@ -21,13 +28,18 @@ def get_provider(
     api_key,
     config=None
 ):
+
     name = provider_name.strip().lower()
 
-    provider_class = PROVIDER_MAP.get(name)
+    provider_class = PROVIDER_MAP.get(
+        name
+    )
 
     if provider_class is None:
+
         raise ValueError(
-            f"Unsupported provider: {provider_name}"
+            f"Unsupported provider: "
+            f"{provider_name}"
         )
 
     return provider_class(

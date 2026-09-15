@@ -7,8 +7,19 @@ providers:
 
   openai:
     enabled: true
-    model: "o3-deep-research"
+    models:
+      - "o4-mini-deep-research"
+      - "o3-deep-research"
+    default_model: "o4-mini-deep-research"
     poll_interval_seconds: 10
+
+  openrouter:
+    enabled: true
+    models:
+      - "perplexity/sonar-deep-research"
+      - "openai/o4-mini-deep-research"
+      - "openai/o3-deep-research"
+    default_model: "perplexity/sonar-deep-research"
 
   gemini:
     enabled: true

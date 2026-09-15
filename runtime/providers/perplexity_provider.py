@@ -10,6 +10,7 @@ class PerplexityDeepResearchProvider(
     provider_name = "perplexity"
 
     def run(self, prompt):
+
         preset = self.config.get(
             "preset",
             "deep-research"
@@ -26,18 +27,18 @@ class PerplexityDeepResearchProvider(
             )
 
             report = getattr(
-    response,
-    "output_text",
-    None
-)
+                response,
+                "output_text",
+                None
+            )
 
-if not report:
-    report = str(response)
+            if not report:
+                report = str(response)
 
-if not report:
-    raise RuntimeError(
-        "Perplexity returned an empty report."
-    )
+            if not report:
+                raise RuntimeError(
+                    "Perplexity returned an empty report."
+                )
 
             return report
 
