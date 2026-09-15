@@ -485,6 +485,11 @@ def main():
         )
 
         print(
+            f"DOCX: "
+            f"{report_paths['docx']}"
+        )
+
+        print(
             f"PDF: "
             f"{report_paths['pdf']}"
         )

@@ -2,6 +2,6 @@ openai
 google-genai
 perplexityai
 PyYAML
-reportlab
-markdown
-xhtml2pdf
+python-docx
+docx2pdf
+markdown-it-py
