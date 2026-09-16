@@ -1,10 +1,8 @@
 # Shell Company Screening Agent
 
-A Deep Research Agent for identifying and evaluating listed shell companies as potential acquisition targets in M&A transactions.
+A Deep Research agent for identifying, screening, and evaluating listed shell companies as potential acquisition targets in M&A transactions.
 
-## Overview
-
-The agent supports a structured shell company screening process, from candidate discovery to due diligence, transaction feasibility assessment, prioritization, and report generation.
+The agent supports OpenAI, OpenRouter, Gemini, and Perplexity Deep Research providers. It takes a transaction mandate at runtime and produces a structured screening report.
 
 ## Research Workflow
 
@@ -24,71 +22,35 @@ Candidate Prioritization
 Report Generation
 ```
 
-The workflow is designed to first identify a broad candidate universe, then progressively narrow and evaluate candidates based on transaction requirements and supporting evidence.
+The research methodology is defined in [`prompt.md`](prompt.md), and the report structure is defined in [`output_spec.md`](output_spec.md).
 
-## Inputs
+## Quick Start
 
-Task requirements are defined in `default_settings.md`, including:
+Create and activate a virtual environment:
 
-* client name
-* target listed market
-* research cut-off date
-* control requirements
-* capital-structure and dilution preferences
-* reporting, legal, and regulatory requirements
-* market-cap requirements
-* transaction objective
-* additional requirements and context
-
-## Output
-
-The agent produces a structured Shell Company Screening Report covering:
-
-* candidate universe and hard-screening results
-* candidate comparison
-* deep due diligence
-* transaction feasibility
-* candidate prioritization
-* key risks and unresolved issues
-* supporting sources
-
-See `output_spec.md` for the report structure.
-
-## Runtime Flow
-
-```text
-Client Settings
-      ↓
-Prompt Builder
-      ↓
-Core Prompt + Output Specification
-      ↓
-Deep Research Runtime
-      ↓
-Shell Company Screening Report
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
-The runtime layer assembles the task configuration, agent prompt, and output specification before sending the research task to a Deep Research environment.
+Install dependencies:
 
-## Repository Structure
-
-```text
-.
-├── README.md
-├── agent_card.md
-├── default_settings.md
-├── prompt.md
-├── output_spec.md
-└── runtime/
-    ├── config.yaml
-    ├── prompt_builder.py
-    ├── agent_runner.py
-    └── output_handler.py
+```powershell
+pip install -r requirements.txt
 ```
 
-## Runtime Status
+Run the agent:
 
-The current runtime is a prototype.
+```powershell
+python -m runtime.main
+```
 
-The agent specification, task configuration, research workflow, output format, and execution interface are defined. Deep Research API integration can be added once the target deployment environment is confirmed.
+The runtime will prompt for the screening mandate, Deep Research provider, model, and API key.
 
+Reports are saved to the `output/` directory in:
+
+- Markdown
+- DOCX
+- PDF
+
+> PDF generation requires Microsoft Word on Windows.
