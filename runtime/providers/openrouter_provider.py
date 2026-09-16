@@ -3,6 +3,12 @@ from openai import OpenAI
 from .base import DeepResearchProvider
 
 
+OPENAI_DEEP_RESEARCH_MODELS = {
+    "openai/o4-mini-deep-research",
+    "openai/o3-deep-research",
+}
+
+
 class OpenRouterDeepResearchProvider(
     DeepResearchProvider
 ):
@@ -30,29 +36,49 @@ class OpenRouterDeepResearchProvider(
                 f"Using OpenRouter model: {model}"
             )
 
-            response = (
-                client.chat.completions.create(
+            # OpenAI Deep Research models must use
+            # the Responses API.
+            if model in OPENAI_DEEP_RESEARCH_MODELS:
+
+                response = client.responses.create(
                     model=model,
-                    messages=[
-                        {
-                            "role": "user",
-                            "content": prompt,
-                        }
-                    ],
-                )
-            )
-
-            if not response.choices:
-                raise RuntimeError(
-                    "OpenRouter returned no choices."
+                    input=prompt,
                 )
 
-            report = (
-                response
-                .choices[0]
-                .message
-                .content
-            )
+                report = getattr(
+                    response,
+                    "output_text",
+                    None
+                )
+
+            # Keep the existing Chat Completions path
+            # for other OpenRouter models such as
+            # Perplexity Sonar Deep Research.
+            else:
+
+                response = (
+                    client.chat.completions.create(
+                        model=model,
+                        messages=[
+                            {
+                                "role": "user",
+                                "content": prompt,
+                            }
+                        ],
+                    )
+                )
+
+                if not response.choices:
+                    raise RuntimeError(
+                        "OpenRouter returned no choices."
+                    )
+
+                report = (
+                    response
+                    .choices[0]
+                    .message
+                    .content
+                )
 
             if not report:
                 raise RuntimeError(

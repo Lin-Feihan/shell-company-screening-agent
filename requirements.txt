@@ -4,4 +4,3 @@ perplexityai
 PyYAML
 python-docx
 docx2pdf
-markdown-it-py

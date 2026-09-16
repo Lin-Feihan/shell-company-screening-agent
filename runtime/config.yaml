@@ -31,6 +31,5 @@ providers:
     preset: "deep-research"
 
 output:
-  format: "markdown"
   directory: "output"
   save_report: true
