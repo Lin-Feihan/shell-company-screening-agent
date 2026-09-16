@@ -28,6 +28,7 @@ class OpenRouterDeepResearchProvider(
         client = OpenAI(
             api_key=self.api_key,
             base_url="https://openrouter.ai/api/v1",
+            timeout=3600,
         )
 
         try:
