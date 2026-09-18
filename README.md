@@ -31,10 +31,18 @@ python -m runtime.main
 
 The runtime will prompt for the screening mandate, Deep Research provider, model, and API key.
 
-Reports are saved to the `output/` directory in:
+## Outputs
 
-- Markdown
-- DOCX
+Research outputs are saved to the `output/` directory.
+
+The agent generates:
+
+- Markdown screening report
+- DOCX screening report
+- PDF screening report
+- Evidence JSON containing structured citations, sources, and provider metadata
+
+> PDF generation requires Microsoft Word on Windows. If PDF conversion fails, the completed Markdown, Evidence JSON, and available DOCX outputs are still preserved.
 - PDF
 
-> PDF generation requires Microsoft Word on Windows.
+> PDF generation requires Microsoft 
