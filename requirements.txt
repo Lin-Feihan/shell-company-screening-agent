@@ -4,3 +4,4 @@ perplexityai
 PyYAML
 python-docx
 docx2pdf
+httpx

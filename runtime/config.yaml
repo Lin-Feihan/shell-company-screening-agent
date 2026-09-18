@@ -29,6 +29,8 @@ providers:
   perplexity:
     enabled: true
     preset: "deep-research"
+    timeout_seconds: 3600
+    max_retries: 3
 
 output:
   directory: "output"

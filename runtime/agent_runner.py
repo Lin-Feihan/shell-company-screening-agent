@@ -51,9 +51,9 @@ def run_agent(
     )
 
 
-    report = provider.run(
+    result = provider.run(
         prompt
     )
 
 
-    return report
+    return result
