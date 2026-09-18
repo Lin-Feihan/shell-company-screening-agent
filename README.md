@@ -4,25 +4,9 @@ A Deep Research agent for identifying, screening, and evaluating listed shell co
 
 The agent supports OpenAI, OpenRouter, Gemini, and Perplexity Deep Research providers. It takes a transaction mandate at runtime and produces a structured screening report.
 
-## Research Workflow
+## Agent Workflow
 
-```text
-Research Planning
-      ↓
-Candidate Universe Construction
-      ↓
-Hard Screening
-      ↓
-Deep Due Diligence
-      ↓
-Transaction Feasibility and Economics
-      ↓
-Candidate Prioritization
-      ↓
-Report Generation
-```
-
-The research methodology is defined in [`prompt.md`](prompt.md), and the report structure is defined in [`output_spec.md`](output_spec.md).
+![Shell Company Screening Agent Workflow](figures/shell-company-screening-agent-workflow.png)
 
 ## Quick Start
 
