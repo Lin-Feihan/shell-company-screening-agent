@@ -2,11 +2,11 @@
 
 ## Name
 
-Deep Research Agent for Shell Company Screening
+Shell Company Screening Agent
 
 ## Description
 
-A Deep Research Agent for identifying and evaluating listed shell company candidates in M&A transactions through screening, due diligence, transaction feasibility analysis, and candidate prioritization.
+A Deep Research agent for identifying, screening, and evaluating listed shell companies as potential candidates for reverse mergers, reverse takeovers, and other M&A transactions.
 
 ## Category
 
@@ -22,4 +22,4 @@ M&A Research
 
 ## Output
 
-Structured Shell Company Screening Report
+Shell Company Screening Report
