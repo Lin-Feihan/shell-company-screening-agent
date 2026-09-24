@@ -1,0 +1,126 @@
+{
+  "agent_id": "shell-company-screening",
+  "name": "Shell Company Screening Agent",
+  "description": "A Deep Research Agent for identifying and evaluating listed shell company candidates in M&A transactions through screening, due diligence, transaction feasibility analysis, and candidate prioritization.",
+  "category": "M&A Research",
+  "provider_note": "Runs on OpenAI / OpenRouter / Gemini / Perplexity Deep Research (configured server-side).",
+  "estimated_runtime_seconds": 600,
+  "max_runtime_seconds": 1800,
+  "output_formats": [
+    "markdown",
+    "docx",
+    "pdf",
+    "evidence_json"
+  ],
+  "settings_schema": {
+    "fields": [
+      {
+        "id": "client_name",
+        "label": "Client Name",
+        "type": "text",
+        "required": true,
+        "default": null,
+        "placeholder": "Name of the commissioning client",
+        "description": "Name of the client or organization commissioning the shell company screening task."
+      },
+      {
+        "id": "target_market",
+        "label": "Target Listed Market",
+        "type": "text",
+        "required": true,
+        "default": null,
+        "placeholder": "e.g. HKEX Main Board",
+        "description": "Listed market or jurisdiction in which shell company candidates should be identified."
+      },
+      {
+        "id": "research_cutoff_date",
+        "label": "Research Cut-off Date",
+        "type": "date",
+        "required": false,
+        "default": "today",
+        "description": "Latest date up to which information should be considered."
+      },
+      {
+        "id": "control_requirement",
+        "label": "Control Requirement",
+        "type": "longtext",
+        "required": false,
+        "default": null,
+        "placeholder": "Describe any ownership or control requirements",
+        "description": "Describes any client requirement regarding ownership, effective control, or the desired control path."
+      },
+      {
+        "id": "capital_structure_preference",
+        "label": "Capital Structure Preference",
+        "type": "longtext",
+        "required": false,
+        "default": null,
+        "placeholder": "Describe any capital structure preferences or constraints",
+        "description": "Describes any client preference regarding convertible bonds, legacy financing instruments, or other capital-structure complexity."
+      },
+      {
+        "id": "warrant_dilution_preference",
+        "label": "Warrant and Dilution Preference",
+        "type": "longtext",
+        "required": false,
+        "default": null,
+        "placeholder": "Describe any dilution-related preferences or constraints",
+        "description": "Describes any client preference regarding warrants, options, convertible securities, or other potential dilution."
+      },
+      {
+        "id": "reporting_compliance_requirement",
+        "label": "Reporting, Legal and Regulatory Requirement",
+        "type": "longtext",
+        "required": false,
+        "default": null,
+        "placeholder": "Describe any reporting, legal, or regulatory requirements",
+        "description": "Describes any client-specific requirements regarding reporting, audit status, litigation, regulatory matters, suspension risk, or other compliance issues."
+      },
+      {
+        "id": "historical_financing_preference",
+        "label": "Historical Financing Preference",
+        "type": "longtext",
+        "required": false,
+        "default": null,
+        "placeholder": "Describe any preferences regarding historical financing",
+        "description": "Describes any client preference regarding historical financing arrangements."
+      },
+      {
+        "id": "market_cap_requirement",
+        "label": "Market Capitalization Requirement",
+        "type": "longtext",
+        "required": false,
+        "default": null,
+        "placeholder": "e.g. Below HKD 500 million, or no fixed threshold",
+        "description": "Defines any market-capitalization requirement. If no threshold is specified, market capitalization is treated as a reference for transaction scale and economics rather than as a hard filter."
+      },
+      {
+        "id": "transaction_objective",
+        "label": "Transaction Objective",
+        "type": "longtext",
+        "required": false,
+        "default": null,
+        "placeholder": "Describe the intended transaction objective",
+        "description": "Describes the intended transaction objective and planned use of the listed platform."
+      },
+      {
+        "id": "additional_requirements",
+        "label": "Additional Client Requirements",
+        "type": "longtext",
+        "required": false,
+        "default": null,
+        "placeholder": "Add any other transaction constraints, preferences, or exclusions",
+        "description": "Any additional transaction constraints, preferences, exclusions, or client-specific requirements not covered above."
+      },
+      {
+        "id": "additional_context",
+        "label": "Additional Context",
+        "type": "longtext",
+        "required": false,
+        "default": null,
+        "placeholder": "Add any relevant background or context",
+        "description": "Optional background information or non-public context that may help the agent interpret the client mandate."
+      }
+    ]
+  }
+}
